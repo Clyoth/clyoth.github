@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>8th Monthsary</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    @keyframes fadeIn {
+        0%{opacity: 0;}
+        30%{opacity: 0;}
+        100%{opacity: 1;}
+    }
+
+    body{
+        background-color: black;
+    }
+
+    .container {
+        display: grid;
+    }
+
+    #text-container {
+        text-align: center; 
+        grid-row: 2;
+        font-size: 20vw;
+    }
+
+    a{
+    margin-top:2vh;}
+</style>
+</head>
+<body>
+    <div class="container">
+    <div class="images">
+    </div>
+    <div id="text-container"></div>
+    </div>
+
+    <script>
+        const textContainer = document.getElementById('text-container');
+const hiddenButton = document.getElementById('hiddenButton');
+let linesToAnimate = [];
+let lineIndex = 0;
+let charIndex = 0;
+        function animateText() {
+  if (lineIndex < linesToAnimate.length) {
+    const currentLine = linesToAnimate[lineIndex];
+
+    if (charIndex < currentLine.length) {
+      const letter = document.createElement('span');
+      letter.textContent = currentLine.charAt(charIndex);
+      letter.classList.add('glow');
+      textContainer.appendChild(letter);
+      setTimeout(() => {
+        letter.classList.remove('glow');
+      }, 2000);
+
+      charIndex++;
+      setTimeout(animateText, 80); 
+    } else {
+      lineIndex++;
+      charIndex = 0;
+      textContainer.appendChild(document.createElement('br')); 
+      setTimeout(animateText, 100); 
+      if (lineIndex === linesToAnimate.length) {
+        setTimeout(fadeInButton, 2000);
+      }
+    }
+  }
+}
+
+function addAttributesToArray(...attributes) {
+    if (!Array.isArray(linesToAnimate)) {
+      console.error('The first parameter must be an array.');
+      return;
+    }
+  
+    if (attributes.length === 0) {
+      console.warn('No attributes provided to add.');
+      return linesToAnimate; 
+    }
+  
+    linesToAnimate.forEach((element) => {
+      attributes.forEach((attribute) => {
+        element[attribute] = true; 
+      });
+    });
+  
+    return linesToAnimate;
+  }
+
+function addStringsToArray(existingArray) {
+    if (Array.isArray(existingArray)) {
+      for (let i = 1; i < arguments.length; i++) {
+        existingArray.push(arguments[i]);
+      }
+  
+      return existingArray;
+    } else {
+      console.error("The provided argument is not a valid array.");
+      return null;
+    }
+  }
+
+        addStringsToArray(linesToAnimate, 'Happy' ,'8th', 'Months' ,'Honey!!');
+        setTimeout(animateText,2000);
+    </script>
+</body>
+</html>

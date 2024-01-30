@@ -24,12 +24,21 @@
     grid-row: 1;
     }
 
-    .images img {
-        width: 80%;
-        animation: fadeIn 6s;
+    .imgs {
+        width: 30%;
         opacity: 1;
         filter: grayscale(100%);
         margin-bottom: 2vh;
+    }
+
+    .img1{
+        animation: fadeIn 6s;
+    }
+    .img2{
+        animation: fadeIn 8s;
+    }
+    .img3{
+        animation: fadeIn 10s;
     }
 
     #text-container {
@@ -44,7 +53,9 @@
 <body>
     <div class="container">
     <div class="images">
-        <img src="images/us4.jpg" alt="">
+        <img src="images/shadow2.jpg" alt="" class="imgs img1">
+        <img src="images/us2.jpg" alt="" class="img2 imgs">
+        <img src="images/us3.jpg" alt="" class="img3 imgs">
     </div>
     <div id="text-container"></div>
     <a href="index4.html"><button id="hiddenButton" >Continue</button>
@@ -53,7 +64,7 @@
 
     <script src="script.js"></script>
     <script>
-        addStringsToArray(linesToAnimate, 'This was our first datee', 'The first time I saw you', 'The first time I held your hand', 'The first time I kissed you', 'The first time I hugged you', 'And the first time I felt', 'That kind of happiness');
+        addStringsToArray(linesToAnimate, "We've been together for 8 months", 'And we have had 2 dates in that 8 months', 'These dates were very special to me', "Yes, they we're short and one was brief", 'But those were one of the happiest days', 'of my life.', "I have never felt that happiness before");
         setTimeout(animateText,6000);
     </script>
 </body>

@@ -36,7 +36,7 @@ function animateText() {
       lineIndex++;
       charIndex = 0;
       textContainer.appendChild(document.createElement('br')); 
-      setTimeout(animateText, 500); 
+      setTimeout(animateText, 2000); 
       if (lineIndex === linesToAnimate.length) {
         setTimeout(fadeInButton, 2000);
       }
