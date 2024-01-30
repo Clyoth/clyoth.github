@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>8th Monthsary</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    @keyframes fadeIn {
+        0%{opacity: 0;}
+        30%{opacity: 0;}
+        100%{opacity: 1;}
+    }
+
+    .container {
+        display: grid;
+    }
+  .images {
+    margin-top: 10vh;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    grid-row: 1;
+    }
+
+    .images img {
+        height: 80%;
+        width: 80%;
+        animation: fadeIn 6s;
+        opacity: 1;
+    }
+
+    #text-container {
+        text-align: center; 
+        grid-row: 2;
+    }
+
+    a{
+    margin-top:2vh;}
+</style>
+</head>
+<body>
+    <div class="container">
+    <div class="images">
+        <img src="images/shadow.jpg" alt="">
+    </div>
+    <div id="text-container"></div>
+    <a href="index2.html"><button id="hiddenButton" >Continue</button>
+    </a>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        addStringsToArray(linesToAnimate, 'Idk if tanda mo pa to HAHAHAHAHA', 'But this is my favorite photo of us', 'I really wish I could hug you again', 'I miss you na lovee');
+        setTimeout(animateText,6000);
+    </script>
+</body>
+</html>

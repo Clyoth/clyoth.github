@@ -3,68 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Glowing Text Animation</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
-    body {
-      background-color: black;
-      display: flex;
-      justify-content: center;
-
-    }
-
-    .glow {
-      display: inline-block;
-      animation: glowing 1s infinite;
-    }
-
-    .container{
-      margin-top: 5vh;
-      
-    }
-
-    #text-container {
-      text-align: center;
-      font-size: 4vw;
-      overflow: hidden;
-      white-space: pre;
-      color: rgb(89, 89, 89);
-      font-family: 'Cutive Mono';
-    }
-    #hiddenButton {
-      opacity: 1;
-      background-color: rgba(255, 255, 255, 0);
-      text-decoration: none;
-      color: white;
-      border: none ;
-      font-family: 'Cutive Mono';
-      text-shadow: 0 0 2vw rgba(255, 255, 255, 0.8);;
-      box-shadow: 0 0 2vw rgba(255, 255, 255, 0.8);
-      border-radius: 2px;
-      font-size: 2vw ;
-    }
-
-    a{
-      display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  text-decoration: none;
-
-    }
-
-    @keyframes glowing {
-      0% {
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-      }
-      50% {
-        text-shadow: 0 0 20px rgba(255, 255, 255, 1);
-      }
-      100% {
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-      }
-    }
-  </style>
+  <title>8th Monthsary</title>
+  <link rel="stylesheet" href="style.css">
+  <style>#text-container{margin-top: 20vh;}</style>
 </head>
 <body>
   <div class="container">
@@ -73,70 +14,10 @@
   </a>
   </div>
 
+  <script src="script.js"></script>
   <script>
-const textContainer = document.getElementById('text-container');
-const linesToAnimate = [
-  'Hi love!',
-  'Today is our 8th monthsary.',
-  'I made this as an appreciation',
-  'For the most beautiful person',
-  'In the world'
-];
-let lineIndex = 0;
-let charIndex = 0;
-
-function animateText() {
-  if (lineIndex < linesToAnimate.length) {
-    const currentLine = linesToAnimate[lineIndex];
-
-    if (charIndex < currentLine.length) {
-      const letter = document.createElement('span');
-      letter.textContent = currentLine.charAt(charIndex);
-      letter.classList.add('glow');
-      textContainer.appendChild(letter);
-      setTimeout(() => {
-        letter.classList.remove('glow');
-      }, 2000); // Remove the glow class after 2 seconds
-
-      charIndex++;
-      setTimeout(animateText, 80); // Adjust the delay (in milliseconds) between letters
-    } else {
-      // Move to the next line
-      lineIndex++;
-      charIndex = 0;
-      textContainer.appendChild(document.createElement('br')); // Add line break
-      setTimeout(animateText, 500); // Adjust the delay between lines
-
-      // Check if this is the last line
-      if (lineIndex === linesToAnimate.length) {
-        // All lines have appeared, call fadeInButton after a delay
-        setTimeout(fadeInButton, 2000);
-      }
-    }
-  }
-}
-
-// Get the button element
-const hiddenButton = document.getElementById('hiddenButton');
-
-// Function to fade in the button
-function fadeInButton() {
-  let opacity = 0;
-  hiddenButton.style.display = 'block'; // Make sure the button is visible
-
-  // Increase opacity gradually using setInterval
-  const fadeInInterval = setInterval(() => {
-    opacity += 0.05; // Adjust the step as needed
-    hiddenButton.style.opacity = opacity;
-
-    if (opacity >= 1) {
-      clearInterval(fadeInInterval); // Stop the interval when opacity reaches 1
-    }
-  }, 50); // Adjust the interval duration
-}
-
-animateText();
-
+    addStringsToArray(linesToAnimate,'Hi love!','Today is our 8th monthsary.','I made this to reminisce','The most beautiful 8 months','Of our lives');
+    animateText();
   </script>
 </body>
 </html>

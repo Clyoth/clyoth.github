@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
+body {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+
+}
+
+.glow {
+  display: inline-block;
+  animation: glowing 1s infinite;
+}
+
+.container{
+  margin-top: 5vh;
+  
+}
+
+#text-container {
+
+text-align: center;
+font-size: 4vw;
+overflow: hidden;
+white-space: pre;
+color: rgb(89, 89, 89);
+font-family: 'Cutive Mono';
+}
+#hiddenButton {
+  opacity: 0;
+  background-color: rgba(255, 255, 255, 0);
+  text-decoration: none;
+  color: white;
+  border: none ;
+  font-family: 'Cutive Mono';
+  text-shadow: 0 0 2vw rgba(255, 255, 255, 0.8);;
+  box-shadow: 0 0 2vw rgba(255, 255, 255, 0.8);
+  border-radius: 2px;
+  font-size: 2vw ;
+}
+
+a{
+  display: flex;
+justify-content: center;
+align-items: center;
+height: 100%;
+text-decoration: none;
+
+}
+
+@keyframes glowing {
+  0% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  }
+}
