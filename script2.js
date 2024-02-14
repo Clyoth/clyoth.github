@@ -36,9 +36,9 @@ function animateText() {
       lineIndex++;
       charIndex = 0;
       textContainer.appendChild(document.createElement('br')); 
-      setTimeout(animateText, 1000); 
+      setTimeout(animateText, 20); 
       if (lineIndex === linesToAnimate.length) {
-        setTimeout(fadeInButton, 1000);
+        setTimeout(fadeInButton, 20);
       }
     }
   }
